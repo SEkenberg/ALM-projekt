@@ -15,8 +15,8 @@ public class MyMathCalc {
     }
 
     public double divide(double a, double b ) {
-        if (a < 0 || b < 0) {
-            throw new ArithmeticException("The value can't be under 0.");
+        if (b == 0) {
+            throw new ArithmeticException("Denomination can't be 0.");
         }
         return a / b;
     }
