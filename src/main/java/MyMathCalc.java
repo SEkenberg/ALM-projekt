@@ -14,7 +14,7 @@ public class MyMathCalc {
         return a * b;
     }
 
-    public double divide(double a, double b ) {
+    public double divide(int a, int b ) {
         if (a < 0 || b < 0) {
             throw new ArithmeticException("The value can't be under 0.");
         }
