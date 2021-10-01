@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - /data/db
+
+  mongo-express:
+    image: mongo-express:latest
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo
+
+  spring-app:
+    image:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo
+  environment:
+    DB_HOST: mongo:latest
+    DB_PORT: 27017
+    DB_NAME: db-prod
+    SPRING_PROFILES_ACTIVE: prod
+    depends_on:
+      - mongo
