@@ -16,7 +16,7 @@ services:
       - mongo
 
   spring-app:
-    image:
+    image: simons-image:latest
     build: .
     ports:
       - 8080:8080
